@@ -40,8 +40,8 @@ def p_apply(df, func, *args, **kwargs):
                 for _ in p.imap_unordered(_func, df, chunksize=chunksize):
                     out.append(_)
                     pbar.update()
-    return Series(out)
-    
+    return out
+
 
 def row_apply(df, func, *args, **kwargs):
     n_jobs = kwargs.get('n_workers', mp.cpu_count() - 3)
