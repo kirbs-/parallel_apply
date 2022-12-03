@@ -69,6 +69,6 @@ def _iter(df):
     for i in df.values:
         yield dict(zip(df.columns, i))
 
-Series.parrale_apply = row_apply
+Series.parallel_apply = row_apply
 DataFrame.parallel_apply = row_apply
 DataFrameGroupBy.parallel_apply = p_apply
